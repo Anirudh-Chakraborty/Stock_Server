@@ -13,10 +13,17 @@ const products = [
     { id: 2, name: "Mouse", stock: 50 },
     { id: 3, name: "Keyboard", stock: 20 }
 ];
+
+//To show that Backend is running
+app.get('/', (req, res) => {
+    res.send('Inventory Backend is running');
+});
+
 //Get /products - Returns all products with current stock
 app.get('/products', (req, res) => {
     res.json(products);
 });
+
 //POST /order - Place an order
 app.post('/order', (req, res) => {
     const { productId, quantity } = req.body;
