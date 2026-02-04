@@ -13,13 +13,11 @@ const products = [
     { id: 2, name: "Mouse", stock: 50 },
     { id: 3, name: "Keyboard", stock: 20 }
 ];
-
-// GET /products - Returns all products with current stock
+//Get /products - Returns all products with current stock
 app.get('/products', (req, res) => {
     res.json(products);
 });
-
-// POST /order - Place an order
+//POST /order - Place an order
 app.post('/order', (req, res) => {
     const { productId, quantity } = req.body;
 
