@@ -6,6 +6,10 @@ const PORT = 5001;
 
 app.use(cors());
 app.use(express.json());
+app.use((req, res, next) => {
+    res.header("Access-Control-Allow-Origin", "*");
+    next();
+});
 
 // In-memory storage for products
 const products = [
